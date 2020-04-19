@@ -1,5 +1,6 @@
 from flask import Flask
 from ready import ReadyAPI
+from scraper import ScrapeAPI
 from ready import getSurfSpots
 from ready import getSanClemente
 from ready import getDanaPoint
@@ -14,6 +15,10 @@ print('Ready Endpoint: http://localhost:5000/ready')
 @app.route('/')
 def index():
     return "Nothing to see here"
+
+@app.route('/scrape/<domain>', methods=['GET'])
+def scrape(domain):
+    return ScrapeAPI().get(domain)
 
 @app.route('/ready', methods=['GET'])
 def readyApi():
