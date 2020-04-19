@@ -30,6 +30,27 @@ class getSanClemente():
         content = jsonify({
             "source": "San Clemente",
             "response": sanClemente.status_code,
-            "data": sanClemente.json()
+            "data": sanClemente.json(),
+            "test": "tides"
+        })
+        return content
+
+class getDanaPoint():
+    def get(self):
+        danaPoint = requests.get("https://api.weather.gov/points/33.45,-117.68")
+        content = jsonify({
+            "source": "Dana Point",
+            "response": danaPoint.status_code,
+            "data": danaPoint.json()
+        })
+        return content
+
+class getLagunaBeach():
+    def get(self):
+        lagunaBeach = requests.get("https://api.weather.gov/points/33.55,-117.78")
+        content = jsonify({
+            "source": "Laguna Beach",
+            "response": lagunaBeach.status_code,
+            "data": lagunaBeach.json()
         })
         return content
