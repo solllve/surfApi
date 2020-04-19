@@ -1,5 +1,6 @@
 from flask import Flask
 from ready import ReadyAPI
+from ready import getSurfSpots
 
 app = Flask(__name__)
 
@@ -14,3 +15,7 @@ def index():
 @app.route('/ready', methods=['GET'])
 def readyApi():
     return ReadyAPI().get()
+
+@app.route('/all', methods=['GET'])
+def getSurfSpotInfo():
+    return getSurfSpots().get()
