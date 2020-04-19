@@ -1,3 +1,4 @@
+freshen up on python basics: https://www.dataquest.io/blog/python-api-tutorial/
 1. Create environment `python3 -m venv venv`
 2. activate environment `source venv/bin/activate`
 3. install Flask `pip install flask`
