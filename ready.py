@@ -6,6 +6,7 @@ import time
 import requests
 from flask import jsonify
 from bs4 import BeautifulSoup
+from scraper import ScrapeAPI
 
 class prettyJSON():
     def jprint(obj):
@@ -31,12 +32,20 @@ class getSurfSpots():
 
 class getSanClemente():
     def get(self):
-        sanClemente = requests.get("https://api.weather.gov/points/33.43,-117.62")
+        #headers = {
+        #    'User-Agent': 'Chrome/[.0-9]*'
+        #}
+        sanClemente = requests.get("https://api.weather.gov/gridpoints/SGX/44,47/forecast/hourly")
+        #tidalSource = requests.get('https://tides.willyweather.com/ca/orange-county/san-clemente-pier.html', headers=headers)
+        #content = BeautifulSoup(tidalSource.content, "html.parser")
+        #was playing with a website scraper
+        #if tidalSource.status_code == 200:
+        #    title = content.find('body').text()
+
         content = jsonify({
             "source": "San Clemente",
             "response": sanClemente.status_code,
-            "data": sanClemente.json(),
-            "test": "tides"
+            "data": sanClemente.json()
         })
         return content
 
