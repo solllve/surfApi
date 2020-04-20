@@ -51,7 +51,7 @@ class getSanClemente():
 
 class getDanaPoint():
     def get(self):
-        danaPoint = requests.get("https://api.weather.gov/points/33.45,-117.68")
+        danaPoint = requests.get("https://api.weather.gov/gridpoints/LOX/170,14/forecast/hourly")
         content = jsonify({
             "source": "Dana Point",
             "response": danaPoint.status_code,
@@ -61,7 +61,7 @@ class getDanaPoint():
 
 class getLagunaBeach():
     def get(self):
-        lagunaBeach = requests.get("https://api.weather.gov/points/33.55,-117.78")
+        lagunaBeach = requests.get("https://api.weather.gov/gridpoints/SGX/39,53/forecast/hourly")
         content = jsonify({
             "source": "Laguna Beach",
             "response": lagunaBeach.status_code,
