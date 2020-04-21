@@ -6,7 +6,6 @@ import time
 import requests
 from flask import jsonify
 from bs4 import BeautifulSoup
-from scraper import ScrapeAPI
 
 class prettyJSON():
     def jprint(obj):

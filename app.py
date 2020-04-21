@@ -1,12 +1,12 @@
 from flask import Flask
 from ready import ReadyAPI
-from scraper import ScrapeAPI
 from ready import getSurfSpots
 from ready import getSanClemente
 from ready import getDanaPoint
 from ready import getLagunaBeach
 
 app = Flask(__name__)
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 print('Running Server At: http://localhost:5000/')
 print('-------------')
